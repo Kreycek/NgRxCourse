@@ -1,0 +1,7 @@
+ 1) ng add @angular/material
+ 2) ng add @ngrx/store
+ 3) ng add @ngrx/store-devtools
+ 4) npm install @ngrx/router-store --save
+ 5) npm install @ngrx/data --save
+ 6) npm install @angular/material-moment-adapter moment
+
