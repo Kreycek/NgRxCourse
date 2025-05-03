@@ -3,5 +3,6 @@
  3) ng add @ngrx/store-devtools
  4) npm install @ngrx/router-store --save
  5) npm install @ngrx/data --save
- 6) npm install @angular/material-moment-adapter moment
+ 6) npm install @angular/material-moment-adapter momentx
+ 7) Entrar na pasta server e rodar o servidor node com o comando npm start
 
