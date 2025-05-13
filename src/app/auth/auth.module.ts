@@ -6,10 +6,10 @@ import { MatInputModule } from "@angular/material/input";
 import {RouterModule} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
-import { StoreModule } from '@ngrx/store';
 import {AuthService} from "./auth.service";
-import { EffectsModule } from '@ngrx/effects';
 import { LoginComponent } from './login/login/login.component';
+import { AuthGuard } from './auth.guard';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
     imports: [
@@ -19,6 +19,18 @@ import { LoginComponent } from './login/login/login.component';
         MatInputModule,
         MatButtonModule,
         RouterModule.forChild([{path: '', component: LoginComponent}]),
+        EffectsModule.forFeature([])
+        
+        
+// StoreModule.forRoot({
+//  tess: authReducer
+//     })
+
+    
+// StoreModule.forRoot({
+//      Auth: authReducer
+//     })
+
 
     ],
     declarations: [LoginComponent],
@@ -29,7 +41,8 @@ export class AuthModule {
         return {
             ngModule: AuthModule,
             providers: [
-              AuthService
+              AuthService,
+              AuthGuard
             ]
         }
     }

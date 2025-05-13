@@ -1,11 +1,10 @@
 
 
 
-  import { provideRouter, Routes, withComponentInputBinding } from '@angular/router';
-import { importProvidersFrom } from '@angular/core';
-import { CoursesModule } from './courses/courses.module';
+  import { Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login/login.component';
 import { HomeComponent } from './courses/home/home.component';
+import { AuthGuard } from './auth/auth.guard';
 
 export const routes : Routes= [
     // { path: '', redirectTo: '/login', pathMatch: 'full' }, 
@@ -15,7 +14,9 @@ export const routes : Routes= [
     },
     {
         path: 'courses',
-        component:HomeComponent,
+        loadChildren:()=>import('./courses/courses.module').then(m=>m.CoursesModule),
+        canActivate:[AuthGuard],
+        // component:HomeComponent,
     }
 ];
 
